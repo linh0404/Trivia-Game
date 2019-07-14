@@ -1,0 +1,13 @@
+body {
+    background: url(https://4.bp.blogspot.com/-SFxTxBd9MTg/WkBuRKF1bEI/AAAAAAAAB34/8v2prOfHHPAWLw0Th-iczaygMPWtKbypgCLcBGAs/s1600/Back%2Bto%2Bthe%2BFuture%2BMarty%2BWallpaper%2BEngine.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.jumbotron,
+.body {
+    background-color: rgba(255,255,255,0.6);
+}
+
