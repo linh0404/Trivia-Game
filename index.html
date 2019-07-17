@@ -15,17 +15,19 @@
     </head>
     <body>
         <br>
+        <div id="start">Start Quiz</div>
+        <div id="quiz" style= "display : none;">
         <div class="container">
             <div class="row">
-              <div class="col-sm-9">
-                <div>
+              <div class="col-sm-8">
+                <div class="box">
                     <h1>Back to the Future: Trivia Game</h1>
                 </div>
               </div>
               <div class="col-sm-1">
               </div>
-              <div class="col-sm-2">
-                <div>
+              <div class="col-sm-3">
+                <div class="box">
                     <h1>Score</h1>
                 </div>
               </div>
@@ -34,36 +36,41 @@
         <br>
         <div class="container">
                 <div class="row">
-                  <div class="col-sm-9">
-                    <div>
-                        <h1>Questions</h1>
-                        <h2>Answer 1</h2>
-                        <h2>Answer 2</h2>
-                        <h2>Answer 3</h2>
-                        <h2>Answer 4</h2>
+                  <div class="col-sm-8">
+                    <div class="box">
+                        <div id="questions">
+                            <h1>Questions</h1>
+                        </div>
+                        <br>
+                        <div>
+                            <div class="choice" id="A">Answer 1</div>
+                            <div class="choice" id="B">Answer 2</div>
+                            <div class="choice" id="C">Answer 3</div>
+                            <div class="choice" id="D">Answer 4</div>
+                        </div>
                     </div>
                   </div>
                   <div class="col-sm-1">
                   </div>
-                  <div class="col-sm-2">
-                    <div>
-                        <h1>Leaderboard</h1>
-                        <h2>$1,000,000</h2>
-                        <h2>$500,000</h2>
-                        <h2>$250,000</h2>
-                        <h2>$125,000</h2>
-                        <h2>$64,000</h2>
-                        <h2>$32,000</h2>
-                        <h2>$16,000</h2>
-                        <h2>$8,000</h2>
-                        <h2>$4,000</h2>
-                        <h2>$2,000</h2>
-
+                  <div class="col-sm-3">
+                    <div class="box" id="progress"> 
+                        <h2>Delorean Charge</h2>
+                        <br>
+                        <h3>100%</h3>
+                        <h3>90%</h3>
+                        <h3>80%</h3>
+                        <h3>70%</h3>
+                        <h3>60%</h3>
+                        <h3>50%</h3>
+                        <h3>40%</h3>
+                        <h3>30%</h3>
+                        <h3>20%</h3>
+                        <h3>10%</h3>
                     </div>
                   </div>
                 </div>
             </div>
-          
+          </div>
         <!-- javascript -->
-        <script src="assets/javascript/game.js"></script>
+        <script src="assets/javascript/app.js"></script>
     </body>
