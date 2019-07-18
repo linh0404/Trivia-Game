@@ -7,16 +7,16 @@
 // if time runs out and user hasnt chosen, it will move to the next question and score is 0
 // last question is chosen - results will appear as percentage
 
-"start"
-"quiz"
-"question"
-"counter"
-"timer"
-"A"
-"B"
-"C"
-"D"
-"progress"
+var start = document.getElementById("start");
+var quiz = document.getElementById("quiz");
+var question = document.getElementById("question");
+var counter = document.getElementById("counter");
+var timer = document.getElementById("timer");
+var choiceA = document.getElementById("A");
+var choiceB = document.getElementById("B");
+var choiceC = document.getElementById("C");
+var choiceD = document.getElementById("D");
+var progress = document.getElementById("progress");
 
 
 let questions = [
@@ -53,3 +53,11 @@ let questions = [
         correct: "B"
     }
 ]
+
+var lastQuestionindex = questions.length - 1
+var currentQuestionindex = 0;
+
+function displayQuestion() {
+    var q = questions[currentQuestionindex];
+    question.innerHTML = 
+}
