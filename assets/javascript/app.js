@@ -7,6 +7,10 @@
 // if time runs out and user hasnt chosen, it will move to the next question and score is 0
 // last question is chosen - results will appear as percentage
 
+$('#start').on('click',function() {
+    $('#start').remove();
+})
+
 var start = document.getElementById("start");
 var quiz = document.getElementById("quiz");
 var question = document.getElementById("question");
@@ -21,36 +25,36 @@ var progress = document.getElementById("progress");
 
 let questions = [
     {
-        question: "What is name of the time travelling vehicle?" 
+        question: "What is name of the time travelling vehicle?",
         choiceA: "Time-Turner",
         choiceB: "Tardis",
         choiceC: "Delorean",
-        choiceD: "Time Displacement Equipment"
-        correct: "C"
+        choiceD: "Time Displacement Equipment",
+        correct: "C",
     },
     {
-        question: "Question" 
+        question: "Question",
         choiceA: "A",
         choiceB: "B",
         choiceC: "C",
         choiceD: "D",
-        correct: "A"
+        correct: "A",
     },
     {
-        question: "Question" 
+        question: "Question",
         choiceA: "A",
         choiceB: "B",
         choiceC: "C",
         choiceD: "D",
-        correct: "D"
+        correct: "D",
     },
     {
-        question: "Question" 
+        question: "Question", 
         choiceA: "A",
         choiceB: "B",
         choiceC: "C",
         choiceD: "D",
-        correct: "B"
+        correct: "B",
     }
 ]
 
@@ -67,7 +71,7 @@ function displayQuestion() {
 
 function progress() {
     for (var i = 0; i <= lastQuestionindex; i++) {
-        progress.innerHTML += "<div class="prog" id=" + i + "></div>";
+        progress.innerHTML += "<div class=prog id=" + i + "></div>";
     }
 }
 
@@ -78,4 +82,28 @@ function correct() {
 function wrong() {
     document.getElementById(currentQuestionindex).style.backgroundColor = "red";
 }
+
+const allowedTime = 15; // 30 seconds for every question
+
+var timer = setInterval(counterRender,1000);
+
+function counterRender() {
+    if( counter <= allowedTime) {
+        counter.innerHTML = count;
+        counter++;
+    }
+    else {
+        count = 0;
+        wrong();
+        if(currentQuestionindex < lastQuestionindex) {
+            currentQuestionindex++;
+            displayQuestion();
+        } 
+        else {
+            clearInterval(timer);
+            scoreRender();
+        }
+    }
+}
+
 
