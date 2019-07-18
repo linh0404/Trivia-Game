@@ -59,5 +59,23 @@ var currentQuestionindex = 0;
 
 function displayQuestion() {
     var q = questions[currentQuestionindex];
-    question.innerHTML = 
+    question.innerHTML = "<p>" + q.question + "</p>";
+    choiceA.innerHTML = q.choiceA;
+    choiceB.innerHTML = q.choiceB;
+    choiceC.innerHTML = q.choiceC;
 }
+
+function progress() {
+    for (var i = 0; i <= lastQuestionindex; i++) {
+        progress.innerHTML += "<div class="prog" id=" + i + "></div>";
+    }
+}
+
+function correct() {
+    document.getElementById(currentQuestionindex).style.backgroundColor = "green";
+}
+
+function wrong() {
+    document.getElementById(currentQuestionindex).style.backgroundColor = "red";
+}
+
