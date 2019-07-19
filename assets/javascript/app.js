@@ -21,12 +21,13 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 var progress = document.getElementById("progress");
+var score = document.getElementById("score");
 var correct = 0;
 var incorrect = 0;
+ 
 
 
-
-let questions = [
+var questions = [
     {
         question: "What is name of the time travelling vehicle?",
         choiceA: "Time-Turner",
@@ -36,28 +37,36 @@ let questions = [
         correct: "C",
     },
     {
-        question: "Question",
-        choiceA: "A",
-        choiceB: "B",
-        choiceC: "C",
-        choiceD: "D",
+        question: "Marty's band auditions for a Battle of the Bands by playing Power of Love. What is Marty's band's name?",
+        choiceA: "The Pinheads",
+        choiceB: "The Blockheads",
+        choiceC: "The Zipheads",
+        choiceD: "The Thickheads",
         correct: "A",
     },
     {
-        question: "Question",
-        choiceA: "A",
-        choiceB: "B",
-        choiceC: "C",
-        choiceD: "D",
-        correct: "D",
+        question: "What is the name of Doc Brown's dog? ",
+        choiceA: "Curie",
+        choiceB: "Einstein",
+        choiceC: "Jules",
+        choiceD: "Verne",
+        correct: "B",
     },
     {
-        question: "Question", 
-        choiceA: "A",
-        choiceB: "B",
-        choiceC: "C",
-        choiceD: "D",
-        correct: "B",
+        question: "The flux capacitor is, of course, what makes time travel possible. What warning is written across the bottom of it? ",
+        choiceA: "Shield eyes from light",
+        choiceB: "HOT - do not touch",
+        choiceC: "WARNING: Strong current - power down before opening",
+        choiceD: "WARNING: Hazardous material inside",
+        correct: "A",
+    },
+    {
+        question: "In 1955, Marty asks for a Pepsi Free at Lou's diner. What does he want it free of?", 
+        choiceA: "Charge",
+        choiceB: "Caffeine",
+        choiceC: "Additives",
+        choiceD: "Sugar",
+        correct: "D",
     }
 ]
 
