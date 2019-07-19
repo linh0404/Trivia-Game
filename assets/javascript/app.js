@@ -132,11 +132,13 @@ function checkAnswer(answer) {
 }
 
 function correct() {
-//change font to green
+    //change font to green
+    correct++;
 }
 
 function wrong() {
-//change font to red
+    //change font to red
+    wrong++;
 }
 
 function scoreRender() {
