@@ -75,11 +75,16 @@ var currentQuestionindex = 0;
 
 function displayQuestion() {
     var q = questions[currentQuestionindex];
-    question.innerHTML = "<p>" + q.question + "</p>";
-    choiceA.innerHTML = q.choiceA;
-    choiceB.innerHTML = q.choiceB;
-    choiceC.innerHTML = q.choiceC;
+    question.innerHTML = "<h3>" + q.question + "</h3>";
+    choiceA.innerHTML = "<h5>" + q.choiceA + "</h5>";
+    choiceB.innerHTML = "<h5>" + q.choiceB + "</h5>";
+    choiceC.innerHTML = "<h5>" + q.choiceC + "</h5>";
+    choiceD.innerHTML = "<h5>" + q.choiceD + "</h5>"; 
 }
+
+start.style.display = "none";
+displayQuestion();
+quiz.style.display = "block";
 
 function progress() {
     for (var i = 0; i <= lastQuestionindex; i++) {
