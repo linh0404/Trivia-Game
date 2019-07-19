@@ -99,7 +99,7 @@ let TIMER;
 
 function renderCounter() {
     if(count <= questionTime){
-        counter.innerHTML = count;
+        counter.innerHTML = "<h1>" + count + "</h1>";
         timeGauge.style.width = count * gaugeUnit;
         count++;
     } else {
@@ -139,3 +139,6 @@ function wrong() {
 //change font to red
 }
 
+function scoreRender() {
+    // render the score as a percentage of what was right and wrong
+}
