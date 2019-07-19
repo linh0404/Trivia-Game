@@ -21,6 +21,9 @@ var choiceB = document.getElementById("B");
 var choiceC = document.getElementById("C");
 var choiceD = document.getElementById("D");
 var progress = document.getElementById("progress");
+var correct = 0;
+var incorrect = 0;
+
 
 
 let questions = [
