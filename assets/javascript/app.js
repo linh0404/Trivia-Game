@@ -2,7 +2,7 @@
 // clicking the "start quiz" button will display the main page i.e heading, score, questions, answers and charge
 // list questions in an object/array containing question, choices and correct answer
 // record userchoice and tally if correct
-// have a timer for each question ~ 30 seconds
+// have a timer for each question ~ 15 seconds
 // user must choose an option before time runs out
 // if time runs out and user hasnt chosen, it will move to the next question and score is 0
 // last question is chosen - results will appear as percentage
@@ -70,9 +70,6 @@ var questions = [
     }
 ]
 
-var lastQuestionindex = questions.length - 1
-var currentQuestionindex = 0;
-
 function displayQuestion() {
     var q = questions[currentQuestionindex];
     question.innerHTML = "<h3>" + q.question + "</h3>";
@@ -82,45 +79,63 @@ function displayQuestion() {
     choiceD.innerHTML = "<h5>" + q.choiceD + "</h5>"; 
 }
 
+start.addEventListener("click",startQuiz)
+
+function startQuiz() {
 start.style.display = "none";
 displayQuestion();
 quiz.style.display = "block";
-
-function progress() {
-    for (var i = 0; i <= lastQuestionindex; i++) {
-        progress.innerHTML += "<div class=prog id=" + i + "></div>";
-    }
+renderCounter();
+TIMER = setInterval(renderCounter,1000)
 }
 
-function correct() {
-    document.getElementById(currentQuestionindex).style.backgroundColor = "green";
-}
+var lastQuestionindex = questions.length - 1
+var currentQuestionindex = 0;
+let count =0;
+const questionTime = 10;
+const gaugeWidth = 150;
+const gaugeUnit = gaugeWidth/questionTime;
+let TIMER;
 
-function wrong() {
-    document.getElementById(currentQuestionindex).style.backgroundColor = "red";
-}
-
-const allowedTime = 15; // 30 seconds for every question
-
-var timer = setInterval(counterRender,1000);
-
-function counterRender() {
-    if( counter <= allowedTime) {
+function renderCounter() {
+    if(count <= questionTime){
         counter.innerHTML = count;
-        counter++;
-    }
-    else {
+        timeGauge.style.width = count * gaugeUnit;
+        count++;
+    } else {
         count = 0;
-        wrong();
         if(currentQuestionindex < lastQuestionindex) {
             currentQuestionindex++;
-            displayQuestion();
-        } 
-        else {
-            clearInterval(timer);
+            displayQuestion(); 
+        } else {
+            clearInterval(TIMER);
             scoreRender();
         }
     }
 }
 
+function checkAnswer(answer) {
+    if(answer == questions[currentQuestionindex].correct) {
+        score++;
+        correct();
+    } else {
+        wrong();
+    }
+    count = 0; 
+    if(currentQuestionindex < lastQuestionindex) {
+        currentQuestionindex++;
+        displayQuestion(); 
+    } else {
+        clearInterval(TIMER);
+        scoreRender();
+    }
+}
+
+function correct() {
+//change font to green
+}
+
+function wrong() {
+//change font to red
+}
 
